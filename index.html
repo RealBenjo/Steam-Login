@@ -20,13 +20,13 @@
 
 	  // check if both are the same
 	  if (email != reenter_email) {
-		swal.fire("Idiot, moron, bafoon", "the e-mails do NOT match, please enter correct e-mail!", "error"); // shows error :o (spooky)
+		swal.fire("Uh oh", "the e-mails do NOT match, please enter correct e-mail!", "error"); // shows error :o (spooky)
 	    return;
 	  }
 
 	  swal.fire("Almost there!", "everything is good here, now let's go to the next step! :)", "success").then(() => {
 	    form.submit(); // submita ko user klikne "ok"
-		window.location.href = 'CreateAcc.html';
+		window.location.href = 'create_acc.html';
 	  });
 	}
   </script>
