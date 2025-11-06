@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Create Your Account</title>
+  <link rel="icon" href="images/steamicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <script>
+	function checkPasswords(event) {
+	  var form = document.getElementById("create_account");
+	  var password = document.getElementById("password").value.trim();
+	  var reenter_password = document.getElementById("reenter_password").value.trim();
+	  
+      if (!form.reportValidity()) {
+        return;
+      }
+
+	  // check if both are the same
+	  if (password != reenter_password) {
+		swal.fire("Idiot, moron, bafoon", "the passwords do NOT match, please enter correct passwords!", "error"); // shows error :o (spooky)
+	    return;
+	  }
+
+	  swal.fire("Account registered!", "everything is good to go :)", "success").then(() => {
+	    form.submit(); // submita ko user klikne "ok"
+	  });
+	}
+  </script>
+
+
+
+  <div id="header">
+    <div id="centered_header">
+	  <div id="logo">
+		<a href="https://store.steampowered.com" target="_blank"><img src="images/svg/logo_steam.svg" width="176" height="44" alt="Link to the Steam Homepage"></a>
+	  </div>
+	  <div id="supernav_container">
+		<a href="https://store.steampowered.com/" target="_blank">STORE</a>
+		<a href="https://steamcommunity.com/" target="_blank">COMMUNITY</a>
+		<a href="https://store.steampowered.com/about/" target="_blank">ABOUT</a>
+		<a href="https://help.steampowered.com/en/" target="_blank">SUPPORT</a>
+	  </div>
+	</div>
+  </div>
+
+  <div id="main">
+	<div id="centered">
+	  <div id="form_div">
+		<form id="create_account" method="get" name="create_account">
+		  <div id="account_form_box">
+			<div id="form_content">
+			  <div id="form_title"> 
+				<h1>CREATE YOUR ACCOUNT</h1>
+			  </div>
+
+			  <div class="form_row_flex">
+				<div class="form_area">
+				  <label for="AccName">Steam Account Name</label>
+				  <input type="text" name="AccName" id="AccName" required/>
+				</div>
+			  </div>
+
+			  <div style="margin-top: 70px;"></div> <!-- samo nardi razmik -->
+
+			  <div class="form_row_flex">
+				<div class="form_area">
+                  <label class="reenter_row" for="password">Choose Password</label>
+                  <input type="text" minlength="8" name="password" id="password" required/>
+                </div>
+			  </div>
+
+			  <div style="margin-top: 40px;"></div> <!-- samo nardi razmik -->
+
+			  <div class="form_row_flex">
+				<div class="form_area">
+                  <label class="reenter_row" for="reenter_password">Confirm Password</label>
+                  <input type="text" minlength="8" name="reenter_password" id="reenter_password" required/>
+                </div>
+			  </div>
+
+			  <div id="create_account_div">
+				<button type="button" id="createAccountButton" onclick="checkPasswords()">Continue</button>
+			  </div>
+		  </div>
+		</form>
+	  </div>
+	</div>
+  </div>
+</body>
+</html>
