@@ -104,7 +104,7 @@ li{
 
 
 /* main divs are down here */
-#main{
+.main{
   width: 100vw;
   padding-bottom: 0px;
 }
@@ -124,7 +124,10 @@ li{
   font-weight: normal;
 }
 
-#form_content{
+#form_content_1{
+  width: inherit;
+}
+#form_content_2{
   width: inherit;
 }
 

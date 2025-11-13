@@ -10,12 +10,14 @@
 </head>
 <body>
   <script>
+	const acc_form_1 = document.getElementById("create_account_1");
+	const acc_form_2 = document.getElementById("create_account_2");
+
 	function checkEmails(event) {
-	  var form = document.getElementById("create_account");
 	  var email = document.getElementById("email").value.trim();
 	  var reenter_email = document.getElementById("reenter_email").value.trim();
 	  
-      if (!form.reportValidity()) {
+      if (!acc_form_1.reportValidity()) {
         return;
       }
 
@@ -26,8 +28,28 @@
 	  }
 
 	  swal.fire("Almost there!", "everything is good here, now let's go to the next step! :)", "success").then(() => {
-	    form.submit(); // submita ko user klikne "ok"
-		window.location.href = 'create_acc.html';
+		acc_form_1.style.display = "none";
+		acc_form_2.style.display = "block";
+	  });
+	}
+
+	function checkPasswords(event) {
+	  var password = document.getElementById("password").value.trim();
+	  var reenter_password = document.getElementById("reenter_password").value.trim();
+	  
+      if (!acc_form_2.reportValidity()) {
+        return;
+      }
+
+	  // check if both are the same
+	  if (password != reenter_password) {
+		swal.fire("Uh oh", "the passwords do NOT match, please enter correct passwords!", "error"); // shows error :o (spooky)
+	    return;
+	  }
+
+	  swal.fire("Account registered!", "everything is good to go :)", "success").then(() => {
+	    acc_form_1.submit();
+	    acc_form_2.submit();
 	  });
 	}
   </script>
@@ -48,12 +70,12 @@
 	</div>
   </div>
 
-  <div id="main">
+  <div class="main">
 	<div id="centered">
 	  <div id="form_div">
-		<form id="create_account" method="get" onsubmit="return checkEmails(event)" name="create_account">
+		<form id="create_account_1" method="get" onsubmit="return checkEmails(event)" name="create_account_1">
 		  <div id="account_form_box">
-			<div id="form_content">
+			<div id="form_content_1">
 			  <div id="form_title"> 
 				<h1>CREATE YOUR ACCOUNT</h1>
 			  </div>
@@ -585,6 +607,48 @@
 				<button type="button" id="createAccountButton" onclick="checkEmails()">Continue</button>
 			  </div>
 		    </div>
+		  </div>
+		  </div>
+		</form>
+
+
+
+		<form id="create_account_2" method="get" onsubmit="return checkPasswords(event)" name="create_account_2" style="display: none;">
+		  <div id="account_form_box">
+			<div id="form_content">
+			<div id="form_title"> 
+			  <h1>CREATE YOUR ACCOUNT</h1>
+			</div>
+
+			<div class="form_row_flex">
+			  <div class="form_area">
+			    <label for="AccName">Steam Account Name</label>
+			    <input type="text" name="AccName" id="AccName" required/>
+			  </div>
+			</div>
+
+			<div style="margin-top: 70px;"></div> <!-- samo nardi razmik -->
+
+			<div class="form_row_flex">
+			  <div class="form_area">
+				<label class="reenter_row" for="password">Choose Password</label>
+				<input type="text" minlength="8" name="password" id="password" required/>
+			  </div>
+			</div>
+
+			<div style="margin-top: 40px;"></div> <!-- samo nardi razmik -->
+
+			<div class="form_row_flex">
+				<div class="form_area">
+					<label class="reenter_row" for="reenter_password">Confirm Password</label>
+					<input type="text" minlength="8" name="reenter_password" id="reenter_password" required/>
+				</div>
+				</div>
+
+				<div id="create_account_div">
+				<button type="button" id="createAccountButton" onclick="checkPasswords()">Continue</button>
+				</div>
+			</div>
 		  </div>
 		</form>
 	  </div>
