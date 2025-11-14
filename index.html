@@ -9,50 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-  <script>
-	const acc_form_1 = document.getElementById("create_account_1");
-	const acc_form_2 = document.getElementById("create_account_2");
-
-	function checkEmails(event) {
-	  var email = document.getElementById("email").value.trim();
-	  var reenter_email = document.getElementById("reenter_email").value.trim();
-	  
-      if (!acc_form_1.reportValidity()) {
-        return;
-      }
-
-	  // check if both are the same
-	  if (email != reenter_email) {
-		swal.fire("Uh oh", "the e-mails do NOT match, please enter correct e-mail!", "error"); // shows error :o (spooky)
-	    return;
-	  }
-
-	  swal.fire("Almost there!", "everything is good here, now let's go to the next step! :)", "success").then(() => {
-		acc_form_1.style.display = "none";
-		acc_form_2.style.display = "block";
-	  });
-	}
-
-	function checkPasswords(event) {
-	  var password = document.getElementById("password").value.trim();
-	  var reenter_password = document.getElementById("reenter_password").value.trim();
-	  
-      if (!acc_form_2.reportValidity()) {
-        return;
-      }
-
-	  // check if both are the same
-	  if (password != reenter_password) {
-		swal.fire("Uh oh", "the passwords do NOT match, please enter correct passwords!", "error"); // shows error :o (spooky)
-	    return;
-	  }
-
-	  swal.fire("Account registered!", "everything is good to go :)", "success").then(() => {
-	    acc_form_1.submit();
-	    acc_form_2.submit();
-	  });
-	}
-  </script>
+  
 
 
 
@@ -654,5 +611,50 @@
 	  </div>
 	</div>
   </div>
+
+  <script>
+	const acc_form_1 = document.getElementById("create_account_1");
+	const acc_form_2 = document.getElementById("create_account_2");
+
+	function checkEmails(event) {
+	  var email = document.getElementById("email").value.trim();
+	  var reenter_email = document.getElementById("reenter_email").value.trim();
+	  
+      if (!acc_form_1.reportValidity()) {
+        return;
+      }
+
+	  // check if both are the same
+	  if (email != reenter_email) {
+		swal.fire("Uh oh", "the e-mails do NOT match, please enter correct e-mail!", "error"); // shows error :o (spooky)
+	    return;
+	  }
+
+	  swal.fire("Almost there!", "everything is good here, now let's go to the next step! :)", "success").then(() => {
+		acc_form_1.style.display = "none";
+		acc_form_2.style.display = "block";
+		acc_form_1.submit();
+	  });
+	}
+
+	function checkPasswords(event) {
+	  var password = document.getElementById("password").value.trim();
+	  var reenter_password = document.getElementById("reenter_password").value.trim();
+	  
+      if (!acc_form_2.reportValidity()) {
+        return;
+      }
+
+	  // check if both are the same
+	  if (password != reenter_password) {
+		swal.fire("Uh oh", "the passwords do NOT match, please enter correct passwords!", "error"); // shows error :o (spooky)
+	    return;
+	  }
+
+	  swal.fire("Account registered!", "everything is good to go :)", "success").then(() => {
+	    acc_form_2.submit();
+	  });
+	}
+  </script>
 </body>
 </html>
