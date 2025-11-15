@@ -5,16 +5,19 @@
 
 body{
   background-color: #1f2428;
-  background-image: url("../images/other/acct_creation_bg.jpg");
-  background-position: -20vw 0;
-  background-size: 50%;
-  background-repeat: no-repeat;
+  font-family: sans-serif;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+/* ensure percent heights work predictably */
+html, body {
+  height: 100%;
 }
 
 h3{
   color: #ffffff;
   font-size: 22px;
-  font-family: Sans-serif;
   font-weight: normal;
 }
 
@@ -66,7 +69,6 @@ li{
 /* header divs and possibly other poo */
 #header{
   background: #171d25;
-  font-family: Sans-serif;
   font-size: 14px;
   
   width: 100vw;
@@ -104,9 +106,24 @@ li{
 
 
 /* main divs are down here */
-.main{
-  width: 100vw;
-  padding-bottom: 0px;
+#login_main{
+  width: 100%;
+  height: calc(100vh - 199px); /* TODO: include footer here too! */
+
+  background-image: url("../images/other/login_bg.jpg");
+  background-color: #171a21;
+  background-position: center;
+  background-size: 85%;
+  background-repeat: no-repeat;
+}
+#register_main{
+  width: 100%;
+  height: calc(100vh - 104px); /* TODO: include footer here too! */
+
+  background-image: url("../images/other/acct_creation_bg.jpg");
+  background-position: -5vw 0;
+  background-size: 40%;
+  background-repeat: no-repeat;
 }
 
 #centered{
@@ -115,20 +132,45 @@ li{
   margin: 0 auto;
 }
 
+#login_centered{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 700px;
+  height: 100%;
+}
+
+#login_div{
+  color: #b8b6b4;
+  background-color: #171a21;
+  border-radius: 4px;
+
+  width: 100%;
+  height: 335px;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  font-weight: normal;
+}
+#login_content{
+  width: 60%;
+  height: 100%;
+  float: left;
+}
+#qr_content{
+  width: 40%;
+  height: 100%;
+  float: right;
+}
+
+
 #form_div{
   padding: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Sans-serif;
   font-size: 14px;
   color: #b8b6b4;
   font-weight: normal;
-}
-
-#form_content_1{
-  width: inherit;
-}
-#form_content_2{
-  width: inherit;
 }
 
 #form_title{
@@ -145,7 +187,7 @@ li{
 
 .form_area{
   width: 90%;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 .form_row_flex{
@@ -161,7 +203,6 @@ li{
 
   padding: 10px;
   margin-bottom: 40px;
-  /* hide the long agreement on the page; it will be shown in a modal when requested */
   display: none;
 }
 
@@ -177,7 +218,58 @@ li{
   margin: 50px 0 10px;
 }
 
-/* ssa is scrollable */
+#label_agree{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#footer{
+  background: #171d25;
+  font-size: 14px;
+  
+  width: 100vw;
+  height: 95px; /*arbitrary steam poopoo number*/
+}
+
+#centered_footer{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 900px;
+  margin: 0 auto;
+}
+#centered_footer a{
+  color: #C6D4DF;
+}
+#centered_footer a:hover{
+  color: #ffffff;
+}
+
+#valve_logo{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer_container{
+  width: 85%;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 2px 0;
+  color: #8F98A0;
+}
+
+#footer_links a{
+  padding: 10px;
+}
+
+
+
+/* this holds the ssa and is scrollable */
 .swal2-html-container{
   text-align: center;
   max-height: 70vh;
@@ -190,7 +282,6 @@ li{
   background: #171d25;
   color: #E9E9E9;
   border-radius: 4px;
-  font-family: Sans-serif;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 .site-swal-title{
@@ -199,6 +290,16 @@ li{
   font-weight: 600;
   margin: 0 0 8px 0;
 }
+
+.swal2-popup.swal2-modal.site-swal-popup.swal2-show {
+  width: 80% !important;
+  display: grid;
+
+}
+.swal2-popup.swal2-modal.site-swal-popup.swal2-show h3 {
+  font-size: 30px;
+}
+
 .site-swal-content{
   color: #dcdedf;
   text-align: left;
@@ -207,14 +308,16 @@ li{
   padding: 0 12px;
   line-height: 1.45;
 }
+
+.swal2-popup swal2-modal site-swal-popup swal2-show{
+  width: 80%;
+  display: grid;
+}
 .site-swal-center{
   text-align: center;
 }
 
-/* Force centering when the helper class is present on SweetAlert content.
-   This uses higher specificity and !important so it overrides other rules
-   (including browser/user-agent or other library rules) when you add
-   the `site-swal-center` class. */
+/* force centering */
 .swal2-html-container.site-swal-center,
 .site-swal-center.swal2-html-container,
 .site-swal-content.site-swal-center,
@@ -229,16 +332,18 @@ li{
   margin-top: 14px;
 }
 .site-swal-confirm{
-  color: #ffffff !important;
+  color: #c3e1f8 !important;
   background: linear-gradient( to right, #47bfff 5%, #1a44c2 100%) !important;
   border: none !important;
   padding: 8px 14px !important;
   border-radius: 3px !important;
-  font-weight: 600 !important;
+  font-weight: normal !important;
+  text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.3 );
   box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
 }
 .site-swal-confirm:hover{
-  opacity: 0.95;
+  background: linear-gradient( to right, #47bfff 40%, #1a44c2 100%) !important;
+  background-size: 330% 100%;
 }
 .site-swal-close{
   color: #c3e1f8 !important;
@@ -268,7 +373,7 @@ li{
   background-color: #3a434a;
   border: 2px solid #253644;
   border-radius: 3px;
-  width: 30%;
+  width: 33%;
   font-size: 13px;
   padding: 6px 10px;
   margin-bottom: 12px;
@@ -284,7 +389,6 @@ li{
     
   width: 100%;
   height: 35px;
-  font-family: Arial,Helvetica,sans-serif;
   text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.3 );
   font-size: 15px;
   border: none;
@@ -293,7 +397,6 @@ li{
 .createAccountButton:hover{
   cursor: pointer;
   background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
-  background-size: auto;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
   background-position: 0%;
   background-size: 330% 100%;
@@ -307,7 +410,7 @@ li{
 
 /* HANDLES RESPONSIVENESS */
 @media (max-width: 900px) {
-  body{
+  #register_main{
     background-position: -6969420px 0; /*yummy arbitrary number :)*/
   }
 
@@ -319,10 +422,6 @@ li{
     width: 100%;
   }
 
-  #main{
-    padding-bottom: 120px;
-  }
-
   #centered{
     padding: 15px;
   }
@@ -330,11 +429,24 @@ li{
   #form_div{
     padding: 20px 16px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Sans-serif;
-    font-size: 14px;
     color: #b8b6b4;
     vertical-align: top;
     font-weight: normal;
+  }
+
+  #viewAgreementButton{
+    width: 70%;
+  }
+
+  .swal2-popup.swal2-modal.site-swal-popup.swal2-show {
+    width: 95% !important;
+  }
+
+  .swal2-html-container{
+    text-align: center;
+    max-height: 70vh;
+    overflow-y: auto;
+    text-align: left;
   }
 
   .createAccountButton{

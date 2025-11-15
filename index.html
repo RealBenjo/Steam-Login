@@ -23,7 +23,45 @@
     </div>
   </div>
 
-  <div class="main">
+
+  <!-- LOGIN -->
+  <div id="login_main">
+    <div id="login_centered">
+      <div id="login_div">
+        <div id="login_content">
+          <form id="login_form" method="get" name="login_form">
+            <div class="form_row_flex">
+              <div class="form_area">
+                <label for="username">SIGN IN WITH ACCOUNT NAME</label>
+                <input type="text" maxlength="255" name="username" id="username" required/>
+              </div>
+            </div>
+            <div class="form_row_flex">
+              <div class="form_area">
+                <label for="password">PASSWORD</label>
+                <input type="password" maxlength="255" name="password" id="password" required/>
+              </div>
+            </div>
+            <div class="form_row_flex">
+              <div class="form_area">
+                <input type="checkbox" name="remember_me" id="remember_me"/>
+                <label for="remember_me">Remember me</label>
+              </div>
+            </div>
+            <button type="submit" id="login_button">Sign in</button><br>
+            <a href="https://help.steampowered.com/wizard/HelpWithLogin?redir=https%3A%2F%2Fsteamcommunity.com%2Flogin%2Fhome%2F%3Fgoto%3D" target="_blank">Help, i can't sign in</a>
+          </form>
+        </div>
+        <div id="qr_content">
+          qr code goes here
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CREATE ACCOUNT -->
+  <div id="register_main" style="display: none;">
     <div id="centered">
       <div id="form_div">
         <form id="create_account" method="get" name="create_account">
@@ -618,6 +656,27 @@
             </div>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div id="centered_footer">
+      <div id="valve_logo">
+        <a href="https://www.valvesoftware.com/en/" target="_blank"><img src="images/other/valve_logo.png"></a>
+      </div>
+      <div id="footer_container">
+        <div id="footer_content">
+          <p>© Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.<br>
+          Some geospatial data on this website is provided by <a href="http://www.geonames.org/" target="_blank">geonames.org</a>.</p> 
+        </div>
+        <div id="footer_links">
+          <a href="http://store.steampowered.com/privacy_agreement/" target="_blank">Privacy Policy</a>|
+          <a href="https://store.steampowered.com/legal/" target="_blank">Legal</a>|
+          <a href="https://help.steampowered.com/faqs/view/10BB-D27A-6378-4436" target="_blank">Accessibility</a>|
+          <a href="http://store.steampowered.com/subscriber_agreement/" target="_blank">Steam Subscriber Agreement</a>|
+          <a href="http://store.steampowered.com/account/cookiepreferences/" target="_blank">Cookies</a>
+        </div>
       </div>
     </div>
   </div>
