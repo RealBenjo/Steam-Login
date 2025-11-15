@@ -161,6 +161,8 @@ li{
 
   padding: 10px;
   margin-bottom: 40px;
+  /* hide the long agreement on the page; it will be shown in a modal when requested */
+  display: none;
 }
 
 #ssa_body{
@@ -168,6 +170,78 @@ li{
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0 12px;
+}
+
+#ssa_button_div{
+  text-align: center;
+  margin: 50px 0 10px;
+}
+
+/* ssa is scrollable */
+.swal2-html-container{
+  text-align: center;
+  max-height: 70vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+/* use swal customClass to use this :D*/
+.site-swal-popup{
+  background: #171d25;
+  color: #E9E9E9;
+  border-radius: 4px;
+  font-family: Sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.site-swal-title{
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+.site-swal-content{
+  color: #dcdedf;
+  text-align: left;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 0 12px;
+  line-height: 1.45;
+}
+.site-swal-center{
+  text-align: center;
+}
+
+/* Force centering when the helper class is present on SweetAlert content.
+   This uses higher specificity and !important so it overrides other rules
+   (including browser/user-agent or other library rules) when you add
+   the `site-swal-center` class. */
+.swal2-html-container.site-swal-center,
+.site-swal-center.swal2-html-container,
+.site-swal-content.site-swal-center,
+.swal2-html-container.site-swal-content.site-swal-center {
+  text-align: center !important;
+}
+
+.site-swal-actions{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.site-swal-confirm{
+  color: #ffffff !important;
+  background: linear-gradient( to right, #47bfff 5%, #1a44c2 100%) !important;
+  border: none !important;
+  padding: 8px 14px !important;
+  border-radius: 3px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+}
+.site-swal-confirm:hover{
+  opacity: 0.95;
+}
+.site-swal-close{
+  color: #c3e1f8 !important;
 }
 
 #numbered_list li{
@@ -189,7 +263,22 @@ li{
   margin-top: 35px;
 }
 
-#createAccountButton{
+#viewAgreementButton{
+  color: #E9E9E9;
+  background-color: #3a434a;
+  border: 2px solid #253644;
+  border-radius: 3px;
+  width: 30%;
+  font-size: 13px;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+}
+#viewAgreementButton:hover{
+  cursor: pointer;
+  background-color: #505a62;
+}
+
+.createAccountButton{
   color: #c3e1f8;
   background: linear-gradient( to right, #47bfff 5%, #1a44c2 100%);
     
@@ -201,7 +290,7 @@ li{
   border: none;
   border-radius: 2px;
 }
-#createAccountButton:hover{
+.createAccountButton:hover{
   cursor: pointer;
   background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
   background-size: auto;
@@ -234,6 +323,10 @@ li{
     padding-bottom: 120px;
   }
 
+  #centered{
+    padding: 15px;
+  }
+
   #form_div{
     padding: 20px 16px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -244,7 +337,7 @@ li{
     font-weight: normal;
   }
 
-  #createAccountButton{
+  .createAccountButton{
     width: 100%;
   }
 
@@ -258,6 +351,6 @@ li{
   }
 
   #supernav_container{
-    display: none; /*browser HARDCORE ignorira ta element*/
+    display: none;
   }
 }
