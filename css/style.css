@@ -80,6 +80,24 @@ li{
   width: 176px;
   height: 44px;
 }
+#supernav_container a{
+  color: #C6D4DF;
+  margin: 0 3px;
+}
+#header_login_button{
+  color: #c3e1f8;
+  background-color: transparent;
+  
+  margin-left: 100px;
+  height: 30px;
+  font-size: 12px;
+  border: none;
+}
+#header_login_button:hover{
+  color: #ffffff;
+  cursor: pointer;
+}
+
 /* main divs are down here */
 #login_main{
   width: 100%;
@@ -118,7 +136,7 @@ li{
 }
 #register_main{
   width: 100%;
-  height: calc(100vh - 104px); /* TODO: include footer here too! */
+  height: calc(100vh - 200px); /* TODO: include footer here too! */
 
   background-image: url("../images/other/acct_creation_bg.jpg");
   background-position: -5vw 0;
@@ -244,8 +262,14 @@ label[for="remember_me"]:hover::before{
 #username:hover{
   background-color: #42454c;
 }
-#password{
+#passwordr{
   width: 95%;
+}
+#passwordl{
+  width: 95%;
+}
+#password{
+  width: 100%;
 }
 #password:hover{
   background-color: #42454c;
@@ -531,6 +555,54 @@ label[for="remember_me"]:hover::before{
 .swal2-popup.swal2-modal.site-swal-ssa-popup.swal2-show h3 {
   font-size: 30px;
 }
+
+/* Ensure SSA popup uses the same site theming as other site-swal popups
+   (background, color, border-radius, shadow). Some alerts use the
+   dedicated .site-swal-ssa-popup class only for sizing, so duplicate
+   the visual styles here so the SSA modal isn't white. */
+.swal2-popup.swal2-modal.site-swal-ssa-popup.swal2-show {
+  background: #171d25;
+  color: #E9E9E9;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Force SweetAlert icon animations to run even if the library's
+   @container conditions don't apply in some environments/browsers.
+   These mirror the animation rules from SweetAlert2's stylesheet. */
+.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{
+  animation: swal2-animate-success-line-tip .75s;
+}
+.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{
+  animation: swal2-animate-success-line-long .75s;
+}
+.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{
+  animation: swal2-rotate-success-circular-line 4.25s ease-in;
+}
+.swal2-icon.swal2-error.swal2-icon-show{
+  animation: swal2-animate-error-icon .5s;
+}
+.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{
+  animation: swal2-animate-error-x-mark .5s;
+}
+.swal2-icon.swal2-warning.swal2-icon-show{
+  animation: swal2-animate-error-icon .5s;
+}
+.swal2-icon.swal2-warning.swal2-icon-show .swal2-icon-content{
+  animation: swal2-animate-i-mark .5s;
+}
+.swal2-icon.swal2-info.swal2-icon-show{
+  animation: swal2-animate-error-icon .5s;
+}
+.swal2-icon.swal2-info.swal2-icon-show .swal2-icon-content{
+  animation: swal2-animate-i-mark .8s;
+}
+.swal2-icon.swal2-question.swal2-icon-show{
+  animation: swal2-animate-error-icon .5s;
+}
+.swal2-icon.swal2-question.swal2-icon-show .swal2-icon-content{
+  animation: swal2-animate-question-mark .8s;
+}
 .site-swal-center{
   text-align: center;
 }
@@ -629,6 +701,16 @@ label[for="remember_me"]:hover::before{
 
 
 /* HANDLES RESPONSIVENESS */
+@media (max-width: 1500px) {
+  #login_main{
+    height: calc(100vh - 234px);
+  }
+
+  #footer{
+    display: none;
+  }
+}
+
 @media (max-width: 1200px) {
   #register_main{
     background-position: -6969420px 0; /*yummy arbitrary number :)*/
@@ -686,6 +768,9 @@ label[for="remember_me"]:hover::before{
   #supernav_container{
     display: none;
   }
+  #header_login_button{
+    margin-left: 20px;
+  }
 
   #login_main{
     width: 100%;
@@ -727,7 +812,7 @@ label[for="remember_me"]:hover::before{
   #username{
     width: 75%;
   }
-  #password{
+  #passwordl{
     width: 75%;
   }
   .form_area_centered{
