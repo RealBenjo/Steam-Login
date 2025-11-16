@@ -673,7 +673,7 @@
                 <div class="form_row_flex">
                   <div class="form_area">
                   <label class="reenter_row" for="password">Choose Password</label>
-                  <input type="password" minlength="8" name="password" id="password" required/>
+                  <input type="passwordc" minlength="8" name="passwordc" id="passwordc" required/>
                   </div>
                 </div>
 
@@ -688,9 +688,10 @@
 
                 <div class="form_row_flex">
                   <div class="form_area">
-                  <label style="display:inline-block; cursor:pointer; user-select:none;">
-                    <input type="checkbox" id="show_passwords" onclick="togglePasswords(this)" style="margin-right:8px;"> Show password
-                  </label>
+                    <label>
+                      <input type="checkbox" id="show_passwords" onclick="togglePassword1(this)">
+                      <input type="checkbox" id="show_passwords" onclick="togglePassword2(this)">
+                    </label>
                   </div>
                 </div>
 

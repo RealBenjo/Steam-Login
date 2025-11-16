@@ -117,7 +117,7 @@ function checkPasswords(event) {
 
   if (!validateStep(step2)) return false;
 
-  const password = document.getElementById("passwordr").value.trim();
+  const password = document.getElementById("passwordc").value.trim();
   const reenter_password = document.getElementById("reenter_password").value.trim();
 
   if (password !== reenter_password) {
@@ -246,13 +246,18 @@ function signIn(event) {
   return false;
 }
 
-function togglePasswords(checkbox) {
-  const passwd1 = document.getElementById('passwordr');
-  const passwd2 = document.getElementById('reenter_password');
+function togglePassword1(checkbox) {
+  const passwd1 = document.getElementById('passwordc');
 
-  if (!passwd1 || !passwd2) return;
+  if (!passwd1) return;
   const newType = checkbox.checked ? 'text' : 'password';
   passwd1.type = newType;
+}
+function togglePassword2(checkbox) {
+  const passwd2 = document.getElementById('reenter_password');
+
+  if (!passwd2) return;
+  const newType = checkbox.checked ? 'text' : 'password';
   passwd2.type = newType;
 }
 
