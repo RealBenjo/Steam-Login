@@ -129,10 +129,9 @@ li{
   mask-size: 100% 100%;
 }
 
-/* ensure children are painted above the pseudo-element */
-#login_main > *{
+/* register divs */
+#login_main{
   position: relative;
-  z-index: 1;
 }
 #register_main{
   width: 100%;
@@ -144,9 +143,22 @@ li{
   background-repeat: no-repeat;
 }
 #centered{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   max-width: 855px;
-  padding: 50px;
+  height: 100%;
   margin: 0 auto;
+}
+.show_pointer{
+  cursor: pointer;
+}
+.passwd_n_toggle{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 
@@ -705,6 +717,14 @@ label[for="remember_me"]:hover::before{
   #login_main{
     height: calc(100vh - 234px);
   }
+  #register_main{
+    height: calc(100vh - 234px); /* TODO: include footer here too! */
+  }
+  #centered{
+    max-width: 855px;
+    padding: 50px;
+    margin: 0 auto;
+  }
 
   #footer{
     display: none;
@@ -714,6 +734,7 @@ label[for="remember_me"]:hover::before{
 @media (max-width: 1200px) {
   #register_main{
     background-position: -6969420px 0; /*yummy arbitrary number :)*/
+    height: 600px;
   }
 
   select{
@@ -725,7 +746,7 @@ label[for="remember_me"]:hover::before{
   }
 
   #centered{
-    padding: 15px;
+    padding: 30px 15px;
   }
 
   #form_div{
