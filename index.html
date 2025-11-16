@@ -672,8 +672,13 @@
 
                 <div class="form_row_flex">
                   <div class="form_area">
-                  <label class="reenter_row" for="password">Choose Password</label>
-                  <input type="passwordc" minlength="8" name="passwordc" id="passwordc" required/>
+                  <label class="reenter_row" for="passwordc">Choose Password</label>
+                  <div class="passwd_n_toggle">
+                    <input type="password" minlength="8" name="passwordc" id="passwordc" required/>
+                    <label class="show_pointer">
+                      <input type="checkbox" id="show_password1" onclick="togglePassword1(this)" style="margin-right:6px;"> Show
+                    </label>
+                  </div>
                   </div>
                 </div>
 
@@ -682,16 +687,12 @@
                 <div class="form_row_flex">
                   <div class="form_area">
                     <label class="reenter_row" for="reenter_password">Confirm Password</label>
-                    <input type="password" minlength="8" name="reenter_password" id="reenter_password" required/>
-                  </div>
-                </div>
-
-                <div class="form_row_flex">
-                  <div class="form_area">
-                    <label>
-                      <input type="checkbox" id="show_passwords" onclick="togglePassword1(this)">
-                      <input type="checkbox" id="show_passwords" onclick="togglePassword2(this)">
-                    </label>
+                    <div class="passwd_n_toggle">
+                      <input type="password" minlength="8" name="reenter_password" id="reenter_password" required/>
+                      <label class="show_pointer">
+                        <input type="checkbox" id="show_password2" onclick="togglePassword2(this)" style="margin-right:6px;"> Show
+                      </label>
+                    </div>
                   </div>
                 </div>
 
