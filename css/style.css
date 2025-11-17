@@ -535,12 +535,6 @@ label[for="remember_me"]:hover::before{
   text-align: left;
 }
 /* use swal customClass to use this :D*/
-.site-swal-popup{
-  background: #171d25;
-  color: #E9E9E9;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
 .site-swal-title{
   color: #ffffff;
   font-size: 20px;
@@ -548,7 +542,6 @@ label[for="remember_me"]:hover::before{
   margin: 0 0 8px 0;
 }
 .swal2-popup.swal2-modal.site-swal-popup.swal2-show {
-  /* themed popup (use default SweetAlert width) */
   display: grid;
 
   font-family: sans-serif;
@@ -558,8 +551,6 @@ label[for="remember_me"]:hover::before{
   font-size: 30px;
 }
 
-/* Wide SSA popup: only apply this when the SSA modal requests the specific class
-   so other alerts remain SweetAlert defaults. */
 .swal2-popup.swal2-modal.site-swal-ssa-popup.swal2-show {
   width: 80% !important;
   display: grid;
@@ -568,10 +559,6 @@ label[for="remember_me"]:hover::before{
   font-size: 30px;
 }
 
-/* Ensure SSA popup uses the same site theming as other site-swal popups
-   (background, color, border-radius, shadow). Some alerts use the
-   dedicated .site-swal-ssa-popup class only for sizing, so duplicate
-   the visual styles here so the SSA modal isn't white. */
 .swal2-popup.swal2-modal.site-swal-ssa-popup.swal2-show {
   background: #171d25;
   color: #E9E9E9;
@@ -579,9 +566,7 @@ label[for="remember_me"]:hover::before{
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* Force SweetAlert icon animations to run even if the library's
-   @container conditions don't apply in some environments/browsers.
-   These mirror the animation rules from SweetAlert2's stylesheet. */
+/* forces swal animations */
 .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{
   animation: swal2-animate-success-line-tip .75s;
 }
@@ -621,6 +606,7 @@ label[for="remember_me"]:hover::before{
 .site-swal-center{
   text-align: center;
 }
+
 /* force centering */
 .swal2-html-container.site-swal-center,
 .site-swal-center.swal2-html-container,

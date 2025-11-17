@@ -350,3 +350,23 @@ function showSignIn(){
     login_main.style.display = 'block';
   }
 }
+
+function showCredits(){
+  Swal.fire({
+    title: 'Credits',
+    text: 'This site is made by Benjamin Ipavec',
+    icon: 'info',
+    customClass: {
+      popup: 'site-swal-popup',
+      title: 'site-swal-title',
+      content: 'site-swal-center',
+      confirmButton: 'site-swal-confirm',
+      actions: 'site-swal-actions',
+      closeButton: 'site-swal-close'
+    }, didOpen: () => {
+      // actually center the content
+      const contentEl = document.querySelector('.swal2-html-container, .swal2-content');
+      if (contentEl) contentEl.classList.add('site-swal-center');
+    }
+  });
+}
