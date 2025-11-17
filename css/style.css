@@ -546,6 +546,10 @@ label[for="remember_me"]:hover::before{
 
   font-family: sans-serif;
   font-size: 14px;
+  background: #171d25;
+  color: #E9E9E9;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 .swal2-popup.swal2-modal.site-swal-popup.swal2-show h3 {
   font-size: 30px;

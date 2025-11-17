@@ -132,9 +132,7 @@ function checkPasswords(event) {
         confirmButton: 'site-swal-confirm',
         actions: 'site-swal-actions',
         closeButton: 'site-swal-close'
-      }
-      ,
-      didOpen: () => {
+      }, didOpen: () => {
         const contentEl = document.querySelector('.swal2-html-container, .swal2-content');
         if (contentEl) contentEl.classList.add('site-swal-center');
       }
@@ -153,9 +151,7 @@ function checkPasswords(event) {
       confirmButton: 'site-swal-confirm',
       actions: 'site-swal-actions',
       closeButton: 'site-swal-close'
-    }
-    ,
-    didOpen: () => {
+    }, didOpen: () => {
       const contentEl = document.querySelector('.swal2-html-container, .swal2-content');
       if (contentEl) contentEl.classList.add('site-swal-center');
     }
@@ -233,8 +229,7 @@ function signIn(event) {
       confirmButton: 'site-swal-confirm',
       actions: 'site-swal-actions',
       closeButton: 'site-swal-close'
-    },
-    didOpen: () => {
+    }, didOpen: () => {
       // center the content (keeps behavior consistent with other alerts)
       const contentEl = document.querySelector('.swal2-html-container, .swal2-content');
       if (contentEl) contentEl.classList.add('site-swal-center');
