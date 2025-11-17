@@ -9,6 +9,16 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+  <img src="images/other/credits.png" 
+     usemap="#workmap"
+     width="20" height="20"
+     style="position: absolute; border: none;">
+
+  <map name="workmap" href="#" style="border: none;">
+    <area shape="rect" coords="0,0,20,20" alt="credits" onclick="showCredits()">
+  </map>
+
+  <!-- HEADER -->
   <div id="header">
     <div id="centered_header">
       <div id="logo">
@@ -710,7 +720,7 @@
   <div id="footer">
     <div id="centered_footer">
       <div id="valve_logo">
-        <a href="https://www.valvesoftware.com/en/" target="_blank"><img src="images/other/valve_logo.png"></a>
+        <a href="https://www.valvesoftware.com/en/" target="_blank"><img src="images/other/valve_logo.png" alt="valve_logo"></a>
       </div>
       <div id="footer_container">
         <div id="footer_content">
