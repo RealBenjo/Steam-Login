@@ -109,6 +109,7 @@ li{
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
   background-image: url("../images/other/login_bg.jpg");
   background-position: center;
   background-size: 85%;
@@ -122,7 +123,7 @@ li{
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  /* transparent center, very dark at edges */
+  /* vignette */
   background: radial-gradient(circle at center, rgba(0,0,0,0) 35%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.75) 100%);
 }
 
