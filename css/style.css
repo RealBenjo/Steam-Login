@@ -10,10 +10,6 @@ body{
   font-size: 14px;
 }
 
-/* ensure percent heights work predictably */
-html, body {
-  height: 100%;
-}
 
 h3{
   color: #ffffff;
@@ -66,7 +62,7 @@ li{
   font-size: 14px;
   
   width: 100vw;
-  height: 104px; /*arbitrary steam poopoo number*/
+  height: 104px; /* steam number, don't ask*/
 }
 #centered_header{
   height: 104px;
@@ -85,12 +81,13 @@ li{
   margin: 0 3px;
 }
 #header_login_button{
-  color: #c3e1f8;
+  color: #c9c9c9;
   background-color: transparent;
   
+  border: 1px solid #253644;
   margin-left: 100px;
   height: 30px;
-  font-size: 12px;
+  font-size: 14px;
   border: none;
 }
 #header_login_button:hover{
@@ -98,17 +95,16 @@ li{
   cursor: pointer;
 }
 
-/* main divs are down here */
+/* login divs are down here */
 #login_main{
   width: 100%;
   height: calc(100vh - 329px);
-  position: relative; /* for the pseudo-element that will hold the background image */
+  position: relative; 
   background-color: #171a21;
-  overflow: hidden; /* ensure the pseudo-element doesn't overflow the container */
+  overflow: hidden; 
 }
 
-/* place the decorative background on a pseudo-element so we can mask only the image
-   and not the element's content */
+/* background on a pseudo-element to mask only bg not the whole page */
 #login_main::before{
   content: "";
   position: absolute;
@@ -116,26 +112,24 @@ li{
   background-image: url("../images/other/login_bg.jpg");
   background-position: center;
   background-size: 85%;
-  background-repeat: no-repeat;
-  z-index: 0;
-  pointer-events: none;
+  background-repeat: no-repeat; /* to be sure (menacing) */
+}
 
-  /* mask only this pseudo-element */
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%);
-  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+/* i love vignette */
+#login_main::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  /* transparent center, very dark at edges */
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 35%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.75) 100%);
 }
 
 /* register divs */
-#login_main{
-  position: relative;
-}
 #register_main{
   width: 100%;
-  height: calc(100vh - 200px); /* TODO: include footer here too! */
+  height: calc(100vh - 200px);
 
   background-image: url("../images/other/acct_creation_bg.jpg");
   background-position: -5vw 0;
@@ -173,6 +167,7 @@ li{
   width: 700px;
   height: 100%;
   position: relative; /* anchor for the absolute-positioned heading */
+  z-index: 2; /* ensure content sits above the vignette overlay */
 }
 #login_div{
   color: #b8b6b4;
@@ -721,7 +716,7 @@ label[for="remember_me"]:hover::before{
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   #register_main{
     background-position: -6969420px 0; /*yummy arbitrary number :)*/
     height: 600px;
@@ -778,9 +773,6 @@ label[for="remember_me"]:hover::before{
 
   #supernav_container{
     display: none;
-  }
-  #header_login_button{
-    margin-left: 20px;
   }
 
   #login_main{
