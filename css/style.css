@@ -127,6 +127,10 @@ li{
   background: radial-gradient(circle at center, rgba(0,0,0,0) 35%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.75) 100%);
 }
 
+#login_content input{
+  margin-top: 4px;
+}
+
 /* register divs */
 #register_main{
   width: 100%;
@@ -530,7 +534,7 @@ label[for="remember_me"]:hover::before{
   overflow-y: auto;
   text-align: left;
 }
-/* use swal customClass to use this :D*/
+/* use swal customClass to use this :D (yummy customClass)*/
 .site-swal-title{
   color: #ffffff;
   font-size: 20px;
