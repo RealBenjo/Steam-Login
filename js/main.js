@@ -1,3 +1,8 @@
+// funny constants :D
+const form = document.getElementById("create_account");
+const step1 = document.getElementById("step1");
+const step2 = document.getElementById("step2");
+
 // QR generator: creates a demo QR containing a short random token and injects it into #qr_img
 function generateQR() {
   const img = document.getElementById('qr_img');
@@ -30,9 +35,9 @@ function generateQR() {
 
 
 
-// auto-refresh every 20s
+// 20s auto-refresh 
 document.addEventListener('DOMContentLoaded', function() {
-  // start a timer that regenerates the QR every 20 seconds
+  // start a timer of 20s 
   let qrTimer = null;
   function startQrTimer() {
     if (qrTimer) clearInterval(qrTimer);
@@ -43,10 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
   generateQR();
   startQrTimer();
 });
-
-const form = document.getElementById("create_account");
-const step1 = document.getElementById("step1");
-const step2 = document.getElementById("step2");
 
 function validateStep(container) {
   const elements = container.querySelectorAll('input, select, textarea');
@@ -88,6 +89,8 @@ function checkEmails(event) {
     return false;
   }
 
+
+
   Swal.fire({
     title: 'Almost there!',
     text: "everything is good here, now let's go to the next step! :)",
@@ -111,6 +114,8 @@ function checkEmails(event) {
 
   return false;
 }
+
+
 
 function checkPasswords(event) {
   if (event) event.preventDefault();
@@ -161,6 +166,8 @@ function checkPasswords(event) {
 
   return false;
 }
+
+
 
 function signIn(event) {
   if (event) event.preventDefault();
@@ -241,6 +248,9 @@ function signIn(event) {
   return false;
 }
 
+
+
+// passwords toggling
 function togglePassword1(checkbox) {
   const passwd1 = document.getElementById('passwordc');
 
@@ -255,6 +265,8 @@ function togglePassword2(checkbox) {
   const newType = checkbox.checked ? 'text' : 'password';
   passwd2.type = newType;
 }
+
+
 
 function showAgreement() {
   const ssa = document.getElementById('ssa_body');
