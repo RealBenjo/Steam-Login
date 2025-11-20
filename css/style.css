@@ -201,9 +201,7 @@ li{
   font-weight: bold;
 }
 #remember_me{
-  /* keep the real checkbox in the DOM for form submission and
-     assistive tech, but visually hide it — we'll render the box via
-     the label using ::before/::after. */
+  /* we render the box via the label using ::before/ ::after. */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -287,13 +285,14 @@ label[for="remember_me"]:hover::before{
   background-color: #42454c;
 }
 #login_button{
-  color: #c3e1f8;
+  color: #d6ebfb;
   background: linear-gradient( to right, #47bfff 5%, #1a44c2 100%);
     
   width: 70%;
-  height: 35px;
+  height: 40px;
   text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.3 );
   font-size: 15px;
+  font-weight: bold;
   border: none;
   border-radius: 2px;
 }
@@ -541,12 +540,14 @@ label[for="remember_me"]:hover::before{
   font-weight: 600;
   margin: 0 0 8px 0;
 }
+/* fixes success icon (i don't know why it was broken in the first place) */
+.swal2-success-circular-line-left, .swal2-success-circular-line-right, .swal2-success-fix {
+  background-color: #171d25 !important;
+}
 .swal2-popup.swal2-modal.site-swal-popup.swal2-show {
-  display: grid;
-
   font-family: sans-serif;
   font-size: 14px;
-  background: #171d25;
+  background-color: #171d25 !important;
   color: #E9E9E9;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
