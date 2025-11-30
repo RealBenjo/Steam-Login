@@ -173,13 +173,14 @@ function signIn(event) {
   if (event) event.preventDefault();
 
   const form = document.getElementById("login_form");
-  // Run the shared per-container validator so we get the same behavior
-  // (reports the first invalid control and returns false).
+  
   if (form && !validateStep(form)) {
     return false;
   }
+
   const realusername = "igralec";
   const realpassword = "Geslo123";
+  const steamURL = "https://store.steampowered.com/";
 
   var username = document.getElementById("username").value.trim();
   var password = document.getElementById("passwordl").value.trim();
@@ -242,7 +243,9 @@ function signIn(event) {
       if (contentEl) contentEl.classList.add('site-swal-center');
     }
   }).then((result) => {
-    form.submit();
+    document.location.href = steamURL;
+    // if this were a real site we wouldn't do this. it is what it is
+    //form.submit();
   });
 
   return false;
