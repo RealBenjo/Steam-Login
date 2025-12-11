@@ -19,8 +19,8 @@ All markup is bundled into a single <strong>index.html</strong>, with CSS and Ja
 <hr>
 
 <h2>🔐 Login Page</h2>
-<img width="650" alt="Login preview" src="https://github.com/user-attachments/assets/2d8b59dc-0178-43ab-917e-2c948027d234">
-note: to login use Igralec as username and Geslo123 as password
+<img width="650" alt="Login preview" src="https://github.com/user-attachments/assets/2d8b59dc-0178-43ab-917e-2c948027d234"><br>
+<b>note:</b> to login use Igralec as username and Geslo123 as password
 
 <hr>
 
